@@ -1,0 +1,10 @@
+{
+  "hosting.de": {
+    "authToken": "$HOSTING_TOKEN"
+  },
+  "inwx.de":{
+    "username": "$INWX_USER",
+    "password": "$INWX_PASSWORD",
+  },
+}
+}
