@@ -29,9 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           msg: |
-            Following changes will be done on merge
             ```
             ${{ steps.dnscontrol_preview.outputs.output }}
             ```
          check_for_duplicate_msg: true
-       
