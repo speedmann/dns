@@ -1,6 +1,6 @@
 name: Preview
 
-on: push
+on: pull_request
 
 jobs:
   preview:
