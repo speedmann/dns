@@ -1,8 +1,8 @@
 // Providers:
 
 var REG_NONE = NewRegistrar('none', 'NONE');    // No registrar.
-// var REG_HOSTING = NewRegistrar('hosting.de', 'HOSTINGDE');    // No registrar.
-// var DNS_HOSTING = NewDnsProvider('hosting.de', 'HOSTINGDE');  // ISC BIND.
+var REG_HOSTING = NewRegistrar('hosting.de', 'HOSTINGDE');    // No registrar.
+var DNS_HOSTING = NewDnsProvider('hosting.de', 'HOSTINGDE');  // ISC BIND.
 var REG_INWX = NewRegistrar('inwx.de', 'INWX');    // No registrar.
 var DNS_INWX = NewDnsProvider('inwx.de', 'INWX');  // ISC BIND.
 var DNS_DESEC = NewDnsProvider('desec', 'DESEC');  // ISC BIND.
