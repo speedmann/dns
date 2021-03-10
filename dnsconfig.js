@@ -1,8 +1,8 @@
 // Providers:
 
 var REG_NONE = NewRegistrar('none', 'NONE');    // No registrar.
-var REG_HOSTING = NewRegistrar('hosting.de', 'HOSTINGDE');    // No registrar.
-var DNS_HOSTING = NewDnsProvider('hosting.de', 'HOSTINGDE');  // ISC BIND.
+// var REG_HOSTING = NewRegistrar('hosting.de', 'HOSTINGDE');    // No registrar.
+// var DNS_HOSTING = NewDnsProvider('hosting.de', 'HOSTINGDE');  // ISC BIND.
 var REG_INWX = NewRegistrar('inwx.de', 'INWX');    // No registrar.
 var DNS_INWX = NewDnsProvider('inwx.de', 'INWX');  // ISC BIND.
 var DNS_DESEC = NewDnsProvider('desec', 'DESEC');  // ISC BIND.
@@ -23,9 +23,10 @@ var SSL_RECORDS = [
 var TRASH_MAIL = [
 	MX("@",10, "mail.setuid.de."),
 	TXT('@', "\"v=spf1 mx -all\""),
-	DMARC_BUILDER({
-            policy: 'reject',
-          })
+	TXT('_dmarc','v=DMARC1; p=reject; sp=reject;')
+	//DMARC_BUILDER({
+        //    policy: 'reject',
+        //})
 
 ]
 
@@ -33,16 +34,17 @@ var PROTONMAIL = [
 	MX("@",10, "mail.protonmail.ch."),
 	MX("@",20, "mailsec.protonmail.ch."),
 	TXT('@', 'v=spf1 include:_spf.protonmail.ch mx ~all'),
-	DMARC_BUILDER({
-            policy: 'quarantine',
-	    subdomainPolicy: "quarantine",
-	    ri: "86400",
-	    fo: "1",
-	    rua: [
-    		"mailto:2rtbqidx@ag.dmarcian.eu",
-    		"mailto:dmarc@speedmann.de",
-  	    ],
-          })
+	TXT('_dmarc','v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:2rtbqidx@ag.dmarcian.eu,mailto:dmarc@speedmann.de')
+	//DMARC_BUILDER({
+        //    policy: 'quarantine',
+	//    subdomainPolicy: "quarantine",
+	//    ri: "86400",
+	//    fo: "1",
+	//    rua: [
+    	//	"mailto:2rtbqidx@ag.dmarcian.eu",
+    	//	"mailto:dmarc@speedmann.de",
+  	//    ],
+        //})
 	
 ]
 
@@ -50,14 +52,14 @@ var WEBSERVER1 = "46.232.249.242"
 
 // Domains:
 
-D("insecmail.de", REG_HOSTING
-	, DnsProvider(DNS_DESEC)
-	, DefaultTTL(86400)
-	, SSL_RECORDS
-	, TRASH_MAIL
-	, A("@", "35.156.174.53")
-	, A("www", "35.156.174.53")
-)
+// D("insecmail.de", REG_HOSTING
+// 	, DnsProvider(DNS_DESEC)
+// 	, DefaultTTL(86400)
+// 	, SSL_RECORDS
+// 	, TRASH_MAIL
+// 	, A("@", "35.156.174.53")
+// 	, A("www", "35.156.174.53")
+// )
 
 D("5sk.de", REG_INWX
 	, DnsProvider(DNS_INWX,0)
