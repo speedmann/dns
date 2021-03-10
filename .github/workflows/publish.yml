@@ -27,7 +27,7 @@ jobs:
 
 
       - name: DNSControl push
-        uses: speedmann/dnscontrol-action@v3
+        uses: speedmann/dnscontrol-action@main
         env:
           HOSTING_TOKEN: ${{ secrets.HOSTING_TOKEN }}
           INWX_USER: ${{ secrets.INWX_USER }}
