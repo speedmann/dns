@@ -3,10 +3,28 @@ on:
   push:
     branches:
       - main
+jobs:
   push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: DNSControl preview
+        uses: speedmann/dnscontrol-action@main
+        id: dnscontrol_preview
+        env:
+          HOSTING_TOKEN: ${{ secrets.HOSTING_TOKEN }}
+          INWX_USER: ${{ secrets.INWX_USER }}
+          INWX_PASSWORD: ${{ secrets.INWX_PASSWORD }}
+
+        with:
+          args: create-domains
+
+          # Optionally, if your DNSConfig files are in a non-default location,
+          # you could specify the paths to the config and credentials file.
+          config_file: 'dnsconfig.js'
+          creds_file: 'github_creds.json'
+
 
       - name: DNSControl push
         uses: speedmann/dnscontrol-action@v3
