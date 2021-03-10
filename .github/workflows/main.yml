@@ -36,3 +36,21 @@ jobs:
           # you could specify the paths to the config and credentials file.
           config_file: 'dnsconfig.js'
           creds_file: 'github_creds.json'
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: DNSControl push
+        uses: speedmann/dnscontrol-action@v3
+        env:
+          HOSTING_TOKEN: ${{ secrets.HOSTING_TOKEN }}
+          INWX_USER: ${{ secrets.INWX_USER }}
+          INWX_PASSWORD: ${{ secrets.INWX_PASSWORD }}
+        with:
+          args: push
+
+          # Optionally, if your DNSConfig files are in a non-default location,
+          # you could specify the paths to the config and credentials file.
+          config_file: 'dnsconfig.js'
+          creds_file: 'github_creds.json'
