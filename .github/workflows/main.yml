@@ -1,6 +1,6 @@
 name: Check
 
-on: pull_request
+on: push
 
 jobs:
   check:
@@ -16,3 +16,23 @@ jobs:
           # Optionally, if your DNSConfig files are in a non-default location,
           # you could specify the paths to the config and credentials file.
           config_file: 'dnsconfig.js'
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: DNSControl preview
+        uses: koenrh/dnscontrol-action@v3
+        id: dnscontrol_preview
+        env:
+          HOSTING_TOKEN: ${{ secrets.HOSTING_TOKEN }}
+          INWX_USER: ${{ secrets.INWX_USER }}
+          INWX_PASSWORD: ${{ secrets.INWX_PASSWORD }}
+
+        with:
+          args: preview
+
+          # Optionally, if your DNSConfig files are in a non-default location,
+          # you could specify the paths to the config and credentials file.
+          config_file: 'dnscontrol.js'
+          creds_file: 'github_creds.json'
