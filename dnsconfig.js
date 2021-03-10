@@ -5,7 +5,6 @@ var REG_HOSTING = NewRegistrar('hosting.de', 'HOSTINGDE');    // No registrar.
 var DNS_HOSTING = NewDnsProvider('hosting.de', 'HOSTINGDE');  // ISC BIND.
 var REG_INWX = NewRegistrar('inwx.de', 'INWX');    // No registrar.
 var DNS_INWX = NewDnsProvider('inwx.de', 'INWX');  // ISC BIND.
-var DNS_DESEC = NewDnsProvider('desec', 'DESEC');  // ISC BIND.
 
 // MACROS
 var SETUID_NS = [
@@ -51,7 +50,7 @@ var WEBSERVER1 = "46.232.249.242"
 // Domains:
 
 D("insecmail.de", REG_HOSTING
-	, DnsProvider(DNS_DESEC)
+	, DnsProvider(DNS_HOSTING)
 	, DefaultTTL(86400)
 	, SSL_RECORDS
 	, TRASH_MAIL
