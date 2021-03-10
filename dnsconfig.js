@@ -21,7 +21,7 @@ var SSL_RECORDS = [
 
 var TRASH_MAIL = [
 	MX("@",10, "mail.setuid.de."),
-	TXT('@', "\"v=spf1 mx -all\""),
+	TXT('@', "v=spf1 mx -all"),
 	DMARC_BUILDER({
             policy: 'reject',
         })
