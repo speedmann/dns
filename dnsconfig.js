@@ -38,7 +38,7 @@ var PROTONMAIL = [
 	    ri: "86400",
 	    fo: "1",
 	    rua: [
-    		"mailto:2rtbqidx@ag.dmarcian.eu",
+    		"mailto:mailto:2rtbqidx@ag.eu.dmarcian.com",
     		"mailto:dmarc@speedmann.de",
   	    ],
         })
