@@ -58,6 +58,14 @@ D("insecmail.de", REG_HOSTING
 	, A("www", "35.156.174.53")
 )
 
+D("fiese-möps.de", REG_HOSTING
+	, DnsProvider(DNS_HOSTING)
+	, DefaultTTL(86400)
+	, SSL_RECORDS
+	, A("@", "35.156.174.53")
+	, A("www", "35.156.174.53")
+)
+
 D("5sk.de", REG_INWX
 	, DnsProvider(DNS_INWX,0)
 	, DefaultTTL(3600)
