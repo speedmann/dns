@@ -86,6 +86,9 @@ D("swapoff.de", REG_INWX
 	, DefaultTTL(3600)
 	, A("@", WEBSERVER1)
 	, A("www", WEBSERVER1)
+	, A("grafana", '37.120.190.16')
+	, A("prometheus", '37.120.190.16')
+	, A("loki", '37.120.190.16')
 )
 
 D("open-mx.de", REG_INWX
