@@ -89,6 +89,7 @@ D("swapoff.de", REG_INWX
 	, A("grafana", '37.120.190.16')
 	, A("prometheus", '37.120.190.16')
 	, A("loki", '37.120.190.16')
+	, A("push", '37.120.190.16')
 )
 
 D("open-mx.de", REG_INWX
