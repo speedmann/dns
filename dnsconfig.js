@@ -62,8 +62,8 @@ D("fiese-möps.de", REG_HOSTING
 	, DnsProvider(DNS_HOSTING)
 	, DefaultTTL(86400)
 	, SSL_RECORDS
-	, A("@", "35.156.174.53")
-	, A("www", "35.156.174.53")
+	, A("@", WEBSERVER1)
+	, A("www", WEBSERVER1)
 )
 
 D("5sk.de", REG_INWX
