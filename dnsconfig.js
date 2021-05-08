@@ -62,8 +62,8 @@ D("fiese-möps.de", REG_HOSTING
 	, DnsProvider(DNS_HOSTING)
 	, DefaultTTL(86400)
 	, SSL_RECORDS
-	, A("@", "35.156.174.53")
-	, A("www", "35.156.174.53")
+	, A("@", WEBSERVER1)
+	, A("www", WEBSERVER1)
 )
 
 D("5sk.de", REG_INWX
@@ -132,6 +132,7 @@ D("setuid.de", REG_INWX
 	, A('ns2', '176.97.158.104')
 	, A('@', '46.232.249.242')
 	, A('trillian', '37.120.190.16')
+	, A('test', '37.120.190.16')
 	, A('zaphod', '89.163.140.115')
 	, AAAA('ns1', '2001:67c:1bc::104')
 	, AAAA('ns2', '2001:67c:10b8::104')
